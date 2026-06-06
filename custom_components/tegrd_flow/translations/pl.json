@@ -9,6 +9,13 @@
           "port": "Port",
           "name": "Nazwa (opcjonalna)"
         }
+      },
+      "zeroconf_confirm": {
+        "title": "Znaleziono urządzenie TEGRD Flow",
+        "description": "Znaleziono urządzenie **{name}** pod adresem {host}. Dodać do HomeAssistanta?",
+        "data": {
+          "name": "Nazwa"
+        }
       }
     },
     "error": {

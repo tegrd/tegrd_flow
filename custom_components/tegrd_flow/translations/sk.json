@@ -9,6 +9,13 @@
           "port": "Port",
           "name": "Názov (voliteľný)"
         }
+      },
+      "zeroconf_confirm": {
+        "title": "Nájdené TEGRD Flow zariadenie",
+        "description": "Nájdené zariadenie **{name}** na adrese {host}. Pridať do HomeAssistantu?",
+        "data": {
+          "name": "Názov"
+        }
       }
     },
     "error": {

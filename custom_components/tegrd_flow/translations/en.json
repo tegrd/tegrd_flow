@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TEGRD Flow device",
+        "description": "Enter the IP address of the device on your local network.",
+        "data": {
+          "host": "IP address or hostname",
+          "port": "Port",
+          "name": "Name (optional)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to device",
+      "timeout": "Connection timed out",
+      "invalid_response": "Invalid response from device",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This device is already configured"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "ssr1": { "name": "SSR 1" },
+      "ssr2": { "name": "SSR 2" },
+      "overflow_sum": { "name": "Overflow (average)" },
+      "overflow_tmp": { "name": "Overflow (current)" },
+      "ssr1_maxflow": { "name": "SSR 1 max power" },
+      "ssr2_maxflow": { "name": "SSR 2 max power" },
+      "rssi": { "name": "WiFi signal" },
+      "runtime": { "name": "Uptime" },
+      "fw_version": { "name": "Firmware" }
+    },
+    "binary_sensor": {
+      "allow_flows": { "name": "Overflow regulation" },
+      "manual": { "name": "Manual mode" },
+      "schedule_active": { "name": "Schedule active" },
+      "spot_enabled": { "name": "Spot prices" }
+    }
+  }
+}

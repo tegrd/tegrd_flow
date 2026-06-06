@@ -1,0 +1,12 @@
+{
+  "domain": "tegrd_flow",
+  "name": "TEGRD Flow",
+  "version": "0.1.0",
+  "config_flow": true,
+  "documentation": "https://github.com/tegrd/tegrd_flow",
+  "issue_tracker": "https://github.com/tegrd/tegrd_flow/issues",
+  "codeowners": ["@tegrd"],
+  "requirements": [],
+  "iot_class": "local_polling",
+  "integration_type": "device"
+}

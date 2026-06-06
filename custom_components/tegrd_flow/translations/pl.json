@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Urządzenie TEGRD Flow",
+        "description": "Wprowadź adres IP urządzenia w sieci lokalnej.",
+        "data": {
+          "host": "Adres IP lub hostname",
+          "port": "Port",
+          "name": "Nazwa (opcjonalna)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie można połączyć się z urządzeniem",
+      "timeout": "Upłynął limit czasu",
+      "invalid_response": "Nieprawidłowa odpowiedź z urządzenia",
+      "unknown": "Niespodziewany błąd"
+    },
+    "abort": {
+      "already_configured": "To urządzenie jest już skonfigurowane"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "ssr1": { "name": "SSR 1" },
+      "ssr2": { "name": "SSR 2" },
+      "overflow_sum": { "name": "Nadwyżki (średnia)" },
+      "overflow_tmp": { "name": "Nadwyżki (aktualne)" },
+      "ssr1_maxflow": { "name": "SSR 1 maks. moc" },
+      "ssr2_maxflow": { "name": "SSR 2 maks. moc" },
+      "rssi": { "name": "Sygnał WiFi" },
+      "runtime": { "name": "Czas pracy" },
+      "fw_version": { "name": "Firmware" }
+    },
+    "binary_sensor": {
+      "allow_flows": { "name": "Regulacja nadwyżek" },
+      "manual": { "name": "Tryb ręczny" },
+      "schedule_active": { "name": "Harmonogram aktywny" },
+      "spot_enabled": { "name": "Ceny spot" }
+    }
+  }
+}

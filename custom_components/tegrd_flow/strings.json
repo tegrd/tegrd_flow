@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TEGRD Flow zařízení",
+        "description": "Zadejte IP adresu zařízení v lokální síti.",
+        "data": {
+          "host": "IP adresa nebo hostname",
+          "port": "Port",
+          "name": "Název (volitelný)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nelze se připojit k zařízení",
+      "timeout": "Časový limit vypršel",
+      "invalid_response": "Neplatná odpověď ze zařízení",
+      "unknown": "Neočekávaná chyba"
+    },
+    "abort": {
+      "already_configured": "Toto zařízení je již nastaveno"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "ssr1": { "name": "SSR 1" },
+      "ssr2": { "name": "SSR 2" },
+      "overflow_sum": { "name": "Přetoky (průměr)" },
+      "overflow_tmp": { "name": "Přetoky (aktuální)" },
+      "ssr1_maxflow": { "name": "SSR 1 max výkon" },
+      "ssr2_maxflow": { "name": "SSR 2 max výkon" },
+      "rssi": { "name": "WiFi signál" },
+      "runtime": { "name": "Doba běhu" },
+      "fw_version": { "name": "Firmware" }
+    },
+    "binary_sensor": {
+      "allow_flows": { "name": "Regulace přetoků" },
+      "manual": { "name": "Manuální režim" },
+      "schedule_active": { "name": "Harmonogram aktivní" },
+      "spot_enabled": { "name": "Spot ceny" }
+    }
+  }
+}

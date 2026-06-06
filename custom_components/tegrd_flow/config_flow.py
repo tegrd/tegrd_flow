@@ -7,8 +7,20 @@ from typing import Any
 
 import aiohttp
 import voluptuous as vol
-from homeassistant.components.zeroconf import ZeroconfServiceInfo
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+
+# ZeroconfServiceInfo se přesunul mezi verzemi HA – kompatibilní import
+try:
+    from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+except ImportError:  # HA < 2024.4
+    from homeassistant.components.zeroconf import ZeroconfServiceInfo  # type: ignore
+
+# ConfigFlowResult byl přidán v 2024.1, fallback na FlowResult
+try:
+    from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+except ImportError:  # HA < 2024.1
+    from homeassistant.config_entries import ConfigFlow  # type: ignore
+    from homeassistant.data_entry_flow import FlowResult as ConfigFlowResult  # type: ignore
+
 from homeassistant.const import CONF_HOST
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 

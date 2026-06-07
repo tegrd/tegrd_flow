@@ -61,3 +61,20 @@ class TegrdFlowCoordinator(DataUpdateCoordinator):
     @property
     def fw_version(self) -> str:
         return self.data.get("fw_version", "?") if self.data else "?"
+
+    async def async_post_control(self, payload: dict) -> bool:
+        """Pošle POST /control se změnami (manual, allow_flows, ssr1, ssr2)."""
+        try:
+            async with asyncio.timeout(5):
+                async with self._session.post(
+                    f"{self.base_url}/control", json=payload
+                ) as resp:
+                    if resp.status != 200:
+                        _LOGGER.warning("Control POST HTTP %s", resp.status)
+                        return False
+                    # Server vrátí aktualizované /info – rovnou ho použij
+                    self.async_set_updated_data(await resp.json(content_type=None))
+                    return True
+        except (asyncio.TimeoutError, aiohttp.ClientError) as err:
+            _LOGGER.warning("Control POST selhal: %s", err)
+            return False

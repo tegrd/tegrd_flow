@@ -45,6 +45,14 @@
       "manual": { "name": "Manual mode" },
       "schedule_active": { "name": "Schedule active" },
       "spot_enabled": { "name": "Spot prices" }
+    },
+    "switch": {
+      "manual": { "name": "Manual mode" },
+      "allow_flows": { "name": "Overflow regulation" }
+    },
+    "number": {
+      "ssr1_set": { "name": "SSR 1 output" },
+      "ssr2_set": { "name": "SSR 2 output" }
     }
   }
 }

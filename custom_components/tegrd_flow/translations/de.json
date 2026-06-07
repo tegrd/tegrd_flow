@@ -45,6 +45,14 @@
       "manual": { "name": "Manueller Modus" },
       "schedule_active": { "name": "Zeitplan aktiv" },
       "spot_enabled": { "name": "Spotpreise" }
+    },
+    "switch": {
+      "manual": { "name": "Manueller Modus" },
+      "allow_flows": { "name": "Überschussregelung" }
+    },
+    "number": {
+      "ssr1_set": { "name": "SSR 1 Ausgang" },
+      "ssr2_set": { "name": "SSR 2 Ausgang" }
     }
   }
 }

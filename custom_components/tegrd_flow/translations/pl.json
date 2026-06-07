@@ -45,6 +45,14 @@
       "manual": { "name": "Tryb ręczny" },
       "schedule_active": { "name": "Harmonogram aktywny" },
       "spot_enabled": { "name": "Ceny spot" }
+    },
+    "switch": {
+      "manual": { "name": "Tryb ręczny" },
+      "allow_flows": { "name": "Regulacja nadwyżek" }
+    },
+    "number": {
+      "ssr1_set": { "name": "Wyjście SSR 1" },
+      "ssr2_set": { "name": "Wyjście SSR 2" }
     }
   }
 }

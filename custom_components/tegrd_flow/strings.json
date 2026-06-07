@@ -45,6 +45,14 @@
       "manual": { "name": "Manuální režim" },
       "schedule_active": { "name": "Harmonogram aktivní" },
       "spot_enabled": { "name": "Spot ceny" }
+    },
+    "switch": {
+      "manual": { "name": "Manuální režim" },
+      "allow_flows": { "name": "Regulace přetoků" }
+    },
+    "number": {
+      "ssr1_set": { "name": "SSR 1 výstup" },
+      "ssr2_set": { "name": "SSR 2 výstup" }
     }
   }
 }

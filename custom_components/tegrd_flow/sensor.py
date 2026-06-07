@@ -16,8 +16,18 @@ from homeassistant.const import (
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     UnitOfPower,
-    UnitOfTime,
 )
+
+
+def _format_uptime(seconds: int) -> str:
+    """Formátuje uptime na čitelný string – auto přepíná mezi h/d."""
+    s = int(seconds or 0)
+    days = s // 86400
+    hours = (s % 86400) // 3600
+    minutes = (s % 3600) // 60
+    if days > 0:
+        return f"{days} d {hours} h"
+    return f"{hours} h {minutes} min"
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -103,10 +113,8 @@ SENSORS: tuple[TegrdFlowSensorDescription, ...] = (
         key="runtime",
         translation_key="runtime",
         name="Doba běhu",
-        native_unit_of_measurement=UnitOfTime.SECONDS,
-        device_class=SensorDeviceClass.DURATION,
-        entity_registry_enabled_default=False,
-        value_fn=lambda d: int(d.get("runtime", 0)),
+        icon="mdi:timer-outline",
+        value_fn=lambda d: _format_uptime(d.get("runtime", 0)),
     ),
     TegrdFlowSensorDescription(
         key="fw_version",
